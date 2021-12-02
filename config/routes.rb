@@ -1,22 +1,44 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
   #Возвращает краткое описание проекта
-  get '/info', to: 'home#info'
+  root 'home#info'
 
-  #Возвращает список всех возможных моделей для генерации
-  get '/models', to: 'models#list'
+  #Часть регистрации пользователей возможно будет удалена
+  #Страничка входа
+  get '/users', to: 'users#index'
+
+  post '/users/login', to: 'users#login'
+
+  post '/users/register', to: 'users#register'
+
+  delete '/users/id', to: 'users#logout'
+
+  #Возращает полную информацию о пльзователе и его моделях
+  get '/users/id/info', to: 'users#info'
+
+
+  #Страница с моделями
+  # #Возвращает список всех возможных моделей для генерации
+  get '/models', to: 'models#index'
+
 
   #Генерирует текстуры по одному из заданных образцов
-  get '/textures_generator', to: 'generator#generate'
+  get '/texture', to: 'generator#generate'
 
   #Генерирует текстуры по фото загуженных пользователем
-  post '/textures_generator', to: 'generator#generate_by_mold'
+  post '/texture', to: 'generator#generate_by_mold'
 
   #Вовыодит список загруженных примеров текстур
-  get '/textures_generator/textures', to: 'generator#textures_list'
+  get '/texture/index', to: 'generator#index'
 
-  #Стилизирует загруженную картинку
-  post '/image_stylist', to: 'stylist#stylize'
 
+  #Страница с стилями
+  get '/image_stylist', to: 'stylist#index'
+
+  #Загружает картинку стиля
+  # Обучает под неё модель
+  post '/image_stylist/upload', to: 'stylist#download_style'
+
+  #Стилизует загруженную картинку
+  post '/image_stylist/stylize', to: 'stylist#stylize'
 end

@@ -33,6 +33,6 @@
 пример с сайта https://www.machinelearningmastery.ru/style-transfer-styling-images-with-convolutional-neural-networks-7d215b58f461/
 ![img_7.png](img_7.png)
 
-##ССылки
+##Ссылки
 * [Статья о стилизации картинок](https://arxiv.org/pdf/1610.07629.pdf)
 * [Статья о генерации текстур](https://arxiv.org/pdf/2009.01376.pdf)
