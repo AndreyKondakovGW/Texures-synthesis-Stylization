@@ -11,10 +11,10 @@ Rails.application.routes.draw do
 
   post '/users/register', to: 'users#register'
 
-  delete '/users/id', to: 'users#logout'
+  delete '/users/:id', to: 'users#logout'
 
   #Возращает полную информацию о пльзователе и его моделях
-  get '/users/id/info', to: 'users#info'
+  get '/users/:id/info', to: 'users#info'
 
 
   #Страница с моделями
