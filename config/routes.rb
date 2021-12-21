@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   #Часть регистрации пользователей возможно будет удалена
   #Страничка входа
-  get '/users', to: 'users#index'
+  get '/users/login', to: 'users#login_new'
+  get '/users/register', to: 'users#reg_new'
 
-  post '/users/login', to: 'users#login'
+  post '/users/login', to: 'users#login_create'
 
-  post '/users/register', to: 'users#register'
+  post '/users/register', to: 'users#register_create'
 
   delete '/users/:id', to: 'users#logout'
 

@@ -18,13 +18,15 @@ ActiveRecord::Schema.define(version: 2021_12_05_142001) do
   create_table "styles", force: :cascade do |t|
     t.string "name", null: false
     t.string "path", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_styles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "login", null: false
-    t.string "password", null: false
+    t.string "password_digest", null: false
     t.integer "styles_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -3,8 +3,10 @@ class CreateStyle < ActiveRecord::Migration[6.1]
     create_table :styles do |t|
       t.string :name, null: false
       t.string :path, null: false
+      t.belongs_to :user
       t.timestamps
     end
+
   end
 
   def down

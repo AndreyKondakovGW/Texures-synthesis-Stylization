@@ -1,0 +1,12 @@
+<div class="navigator">
+  <%- if @current_user  %>
+    <%="Current user: " + @current_user.login %>
+    <%= link_to 'Log out', users_login_url, method: :delete%>
+  <%-else %>
+    <%= link_to 'Sign In', users_login_url%>
+    <%= link_to 'Sign Up', users_register_url%>
+  <%-end %>
+  <%= link_to 'Models', models_url%>
+  <%= link_to 'Generator', texture_index_url%>
+  <%= link_to 'Styler', image_stylist_url%>
+</div>

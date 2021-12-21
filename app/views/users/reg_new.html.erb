@@ -1,0 +1,19 @@
+<%=form_for @user,url: users_register_url, remote: true do |f| %>
+  <div class="filed">
+    <%= f.label "Login" %>
+    <%= f.text_field :login %>
+  </div>
+  <div class="filed">
+    <%= f.label "Password" %>
+    <%= f.password_field :password, type: :password%>
+  </div>
+  <div class="filed">
+    <%= f.label "Password confirmation" %>
+    <%= f.password_field :password_confirmation, type: :password%>
+  </div>
+  <div class="filed">
+    <%= f.submit "Sign up" %>
+  </div>
+<%end %>
+
+<%= link_to 'Sign in', users_login_url %>

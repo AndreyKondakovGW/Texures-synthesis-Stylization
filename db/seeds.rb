@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+unless Style.any?
+  #Решить куда ложить пути с картинками (статика)
+  @path = #путь к статике
+  Style.create(name: "stone", path: "#{Rails.root}/#{@path}/stone.jpg")
+  Style.create(name: "wood", path: "#{Rails.root}/#{@path}/wood.jpg")
+  # ...
+end
