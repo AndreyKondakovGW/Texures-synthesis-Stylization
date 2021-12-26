@@ -24,13 +24,13 @@ Rails.application.routes.draw do
 
 
   #Генерирует текстуры по одному из заданных образцов
-  get '/texture', to: 'generator#generate'
+  post '/texture', to: 'generator#generate'
 
   #Генерирует текстуры по фото загуженных пользователем
-  post '/texture', to: 'generator#generate_by_mold'
+  post '/texture/by_mold', to: 'generator#generate_by_mold'
 
   #Вовыодит список загруженных примеров текстур
-  get '/texture/index', to: 'generator#index'
+  get '/texture', to: 'generator#index'
 
 
   #Страница с стилями
